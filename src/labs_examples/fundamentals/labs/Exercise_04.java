@@ -15,7 +15,27 @@ public class Exercise_04 {
         int i = 1;
         System.out.println("int i is: " + i);
 
-        // write your code below
+        // write your code below\
+        char c = 'c';
+        System.out.println("char c is: " + c);
+
+        long l = 4444899L;
+        System.out.println("long l is: " + l);
+
+        boolean t = true;
+        System.out.println("boolean t is: " + t);
+
+        float f = 489449f;
+        System.out.println("float f is: " + f);
+
+        double d = 468464684;
+        System.out.println("double d is: " + d);
+
+        short s = 849;
+        System.out.println("short s is: " + s);
+
+        byte b = 46;
+        System.out.println("byte b is: " + b);
 
     }
 
