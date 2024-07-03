@@ -22,5 +22,22 @@ package labs_examples.conditions_loops.labs;
  */
 
 public class Exercise_11 {
+    public static void main(String[] args) {
+        // Using nested for loops to generate the multiplication table
+        for (int i = 1; i <= 10; i++) {
+            for (int j = 1; j <= 10; j++) {
+                // Compute the product of i and j
+                int product = i * j;
 
+                // Print the product followed by a space or pipe
+                System.out.print(product);
+                if (product < 10) {
+                    System.out.print("  |"); // Adjust spacing for single-digit numbers
+                } else {
+                    System.out.print(" |"); // Adjust spacing for double-digit numbers
+                }
+            }
+            System.out.println(); // Move to the next line after each row is printed
+        }
+    }
 }
