@@ -8,4 +8,19 @@ package labs_examples.conditions_loops.labs;
  */
 
 public class Exercise_06 {
+    public static void main(String[] args) {
+        int lowerBound = 1;
+        int upperBound = 100;
+        int sum = 0;
+        int currentNumber = lowerBound;
+
+        // Using while loop to calculate the sum
+        while (currentNumber <= upperBound) {
+            sum += currentNumber;
+            currentNumber++;
+        }
+
+        // Printing the result
+        System.out.println("The sum is: " + sum);
+    }
 }
