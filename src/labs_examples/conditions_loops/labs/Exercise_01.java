@@ -24,6 +24,16 @@ public class Exercise_01 {
         int number = scanner.nextInt();
 
         // write completed code here
+        if(number < 1 || number > 1_000_000 ){
+            System.out.println("The number is out of range. Please enter a new number between 1 and 1000 000");
+    }else {
+            if(number % 2 == 0 ){
+                System.out.println(number + " is even");
+            }else{
+                System.out.println(number + " is odd");
+            }
+        }
+        scanner.close();
+}
 
-    }
 }
