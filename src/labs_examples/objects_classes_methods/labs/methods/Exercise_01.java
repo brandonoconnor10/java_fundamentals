@@ -7,32 +7,48 @@ public class Exercise_01 {
 
     public static void main(String[] args) {
 
-        // please create the methods as instructed below then
-        // call each of those methods from here, within the main()
+        int product = Calculator.multiply(10, 5);
+        System.out.println(product);
 
+        int value = Calculator.divide(10, 5);
+        System.out.println(value);
+
+        Print.printJoke();
+
+        int years = 2;
+        long seconds = Calculator.yearsToSeconds(years);
+        System.out.println(years + " years is equal to " + seconds + " seconds.");
+
+        int length = Calculator.varargsLength(1, 2, 3, 4, 5);
+        System.out.println("The length of the varargs array is: " + length);
     }
 
+}
 
-    // 1) Create a static multiply() method below that takes two int arguments (int a, int b) and
-    //    returns the result of a * b
+class Calculator {
+    public static int multiply(int a, int b) {
+        return a * b;
+    }
 
-
-    // 2) Create a static divide() method below that takes two int arguments (int a, int b) and
-    //    returns the result of a / b
-
-
-    // 3) Create a static void method that will print of joke of your choice to the console
-
+    public static int divide(int a, int b) {
+        return a / b;
+    }
 
     // 4) Create a static method that takes in a number in years (int years) as an argument
     //    and returns the number of seconds that number in years represents
-
+    public static long yearsToSeconds(int years) {
+        int secondsInAYear = 365 * 24 * 60 * 60;
+        return (long) years * secondsInAYear;
+    }
 
     // 5) Create a varargs method that will return the length of the varargs array passed in
+    public static int varargsLength(int... numbers) {
+        return numbers.length;
+    }
+}
 
-
-
-
-
-
+class Print {
+    public static void printJoke() {
+        System.out.println("Why did the chicken cross the road? BEKOS!");
+    }
 }
