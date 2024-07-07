@@ -6,6 +6,8 @@ import java.util.Scanner;
  *
  *      Using the array below, take in a number from 1-10 from the user and print out the index of that
  *      element.
+ * 
+ * Commit for the day 
  *
  */
 
