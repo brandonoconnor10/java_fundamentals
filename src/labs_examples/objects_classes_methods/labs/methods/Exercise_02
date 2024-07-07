@@ -24,3 +24,139 @@ Create a new class called MethodTraining.java and in this class please do the fo
         instantiate a second array. You must reverse the array in place using only one extra temp variable. Hint: this
         variable is used to temporarily store individual values in the array
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class MethodTraining {
+
+    public static void main(String[] args) {
+        // Demonstrate method overloading
+        System.out.println(sum(5, 10));
+        System.out.println(sum(5, 10, 15));
+        System.out.println(sum(5.5, 10.5));
+
+        // Demonstrate pass by value
+        int a = 10;
+        passByValue(a);
+        System.out.println("After passByValue: " + a);
+
+        // Demonstrate pass by reference
+        int[] array = {1, 2, 3};
+        passByReference(array);
+        System.out.println("After passByReference: " + Arrays.toString(array));
+
+        // Largest of 4 numbers
+        System.out.println("Largest of 4 numbers: " + largestOfFour(10, 20, 30, 40));
+
+        // Count consonants
+        String str = "Hello World!";
+        System.out.println("Consonants count: " + countConsonants(str));
+
+        // Determine if number is prime
+        int num = 29;
+        System.out.println(num + " is prime: " + isPrime(num));
+
+        // Highest and lowest in array
+        int[] nums = {5, 2, 9, 1, 7};
+        int[] highLow = highestAndLowest(nums);
+        System.out.println("Highest: " + highLow[0] + ", Lowest: " + highLow[1]);
+
+        // Divisible by both divisors
+        ArrayList<Integer> divisibleList = divisibleByBoth(30, 3, 5);
+        System.out.println("Numbers divisible by 3 and 5: " + divisibleList);
+        System.out.println("Length of list: " + divisibleList.size());
+
+        // Reverse array in place
+        int[] reverseArray = {1, 2, 3, 4, 5};
+        reverseArrayInPlace(reverseArray);
+        System.out.println("Reversed array: " + Arrays.toString(reverseArray));
+    }
+
+    // 1) Demonstrate method overloading
+    public static int sum(int a, int b) {
+        return a + b;
+    }
+
+    public static int sum(int a, int b, int c) {
+        return a + b + c;
+    }
+
+    public static double sum(double a, double b) {
+        return a + b;
+    }
+
+    // 2) Demonstrate the difference between "pass by value" and "pass by reference"
+    public static void passByValue(int x) {
+        x = 20;
+    }
+
+    public static void passByReference(int[] array) {
+        array[0] = 99;
+    }
+
+    // 3) Create a method that will return the largest of 4 numbers
+    public static int largestOfFour(int a, int b, int c, int d) {
+        return Math.max(Math.max(a, b), Math.max(c, d));
+    }
+
+    // 4) Write a method to count all consonants in a String
+    public static int countConsonants(String str) {
+        int count = 0;
+        str = str.toLowerCase();
+        for (char ch : str.toCharArray()) {
+            if (ch >= 'a' && ch <= 'z' && "aeiou".indexOf(ch) == -1) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    // 5) Write a method that will determine whether or not a number is prime
+    public static boolean isPrime(int num) {
+        if (num <= 1) {
+            return false;
+        }
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    // 6) Write a method that will return a small array containing the highest and lowest numbers in a given numeric array
+    public static int[] highestAndLowest(int[] array) {
+        int highest = Integer.MIN_VALUE;
+        int lowest = Integer.MAX_VALUE;
+        for (int num : array) {
+            if (num > highest) {
+                highest = num;
+            }
+            if (num < lowest) {
+                lowest = num;
+            }
+        }
+        return new int[]{highest, lowest};
+    }
+
+    // 7) Write a method that takes 3 arguments and returns an Integer ArrayList
+    public static ArrayList<Integer> divisibleByBoth(int maxNum, int divisor1, int divisor2) {
+        ArrayList<Integer> list = new ArrayList<>();
+        for (int i = 0; i <= maxNum; i++) {
+            if (i % divisor1 == 0 && i % divisor2 == 0) {
+                list.add(i);
+            }
+        }
+        return list;
+    }
+
+    // 8) Write a method that will reverse an array in place using only one extra temp variable
+    public static void reverseArrayInPlace(int[] array) {
+        int n = array.length;
+        for (int i = 0; i < n / 2; i++) {
+            int temp = array[i];
+            array[i] = array[n - 1 - i];
+            array[n - 1 - i] = temp;
+        }
+    }
+}
